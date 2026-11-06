@@ -245,4 +245,21 @@ Also run once through a real local MQTT broker (simulator → server → LSTM �
 
 ---
 
+## 9. What is hardcoded and what isn’t
+
+Hardcoded, meaning synthetic input:
+
+The trip in simlib.py. The vehicle moves in a straight line east at a constant 11 m/s from a fixed point in Bengaluru.
+The router positions, which are a fake grid of routers around that point, saved in mock_routers.json. That is why the fix source says mock.
+Wokwi, which pads its scan with 3 fixed fake addresses. It always reports the same spot, so on its own it only produces “stationary”.
+
+Not hardcoded, meaning real processing:
+
+Decoding the payload, the position lookup, the speed and acceleration maths, the LSTM, the gate, the latch, the banner and the Telegram alerts.
+
+
+To show it isn’t faked:
+
+Run python -m tools.simulate_device --scenario foot --period 1 --device w01-k7f3 with the server running. The class changes to foot escape. Then run --scenario stationary and the banner never turns red. 
+
 ---
