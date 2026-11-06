@@ -175,7 +175,7 @@ $env:TELEGRAM_TOKEN.Length
 
 
 ### FULL DEMO
-``
+```
 python -m tools.simulate_device --scenario vehicle --period 10 --device w01-k7f3
 ```
 
