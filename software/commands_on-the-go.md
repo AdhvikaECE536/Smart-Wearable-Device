@@ -160,8 +160,10 @@ Invoke-RestMethod "https://api.telegram.org/bot$env:TELEGRAM_TOKEN/sendMessage?c
 Your phone should buzz and the command should print ok True. If it says Unauthorized, the token has a wrong character, so recopy it from BotFather by clicking on the token text.
 
 # LOADER
+```
 Get-Content .env | Where-Object {$_ -match '^\w+='} | ForEach-Object { $k,$v = $_ -split '=',2; Set-Item "env:$k" $v.Trim() }
 $env:TELEGRAM_TOKEN.Length
+```
 
 ### Restart both processes, each in its own terminal:
 
