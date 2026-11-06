@@ -173,8 +173,16 @@ $env:TELEGRAM_TOKEN.Length
    ```
 3. In the dashboard, click Send test alert. The log should show a green “sent” and your phone should buzz.
 
+
 ### FULL DEMO
 ``
 python -m tools.simulate_device --scenario vehicle --period 10 --device w01-k7f3
 ```
+
+# TO TEST
+```
+python -m tools.test_pipeline
+python -m tools.test_dashboard
+```
+
 
